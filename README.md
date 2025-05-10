@@ -47,6 +47,33 @@ blog_project/
 ├── db.sqlite3          # پایگاه داده پیش‌فرض
 └── manage.py
 ```
+## Build and Run Dockerfile
+```bash
+docker build -t blog-django .
+docker run -p 8000:8000 blog-django
+```
+## Push to Docker Hub
+```bash
+docker tag blog-django your_dockerhub_username/blog-django:latest
+docker push your_dockerhub_username/blog-django:latest
+```
+## Deploy with Kubernetes (Minikube)
+```bash
+minikube image load blog-django
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+```
+##Manual Scaling
+```bash
+kubectl scale deployment blog-django-deployment --replicas=3
+```
+## Autoscaling with HPA
+```bash
+minikube addons enable metrics-server
+kubectl autoscale deployment blog-django-deployment --cpu-percent=50 --min=1 --max=5
+kubectl get hpa
+```
+
 ## 🔮 برنامه‌های آینده
 ### فعال‌سازی ثبت‌نام و لاگین خودکار
 
