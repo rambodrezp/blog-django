@@ -35,6 +35,7 @@ python manage.py runserver
 ### 6. سپس به آدرس زیر می رویم:
 http://127.0.0.1:8000/
 ## 🧩 ساختار پروژه
+```bash
 blog_project/
 ├── blog/               # اپ اصلی
 │   ├── templates/      # قالب‌ها
@@ -44,6 +45,7 @@ blog_project/
 │   └── settings.py     # تنظیمات Django
 ├── db.sqlite3          # پایگاه داده پیش‌فرض
 └── manage.py
+```
 ## 🔮 برنامه‌های آینده
 ### فعال‌سازی ثبت‌نام و لاگین خودکار
 
